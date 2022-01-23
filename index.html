@@ -26,7 +26,7 @@
         }
         .sunPoint{
             /* overflow: hidden; */
-            position: fixed;
+            position: absolute;
             /* height: 10px;
             width: 100px; */
             top: 50vh;
@@ -88,13 +88,15 @@
             background-color: rgba(163, 163, 163, 0.555);
             -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(0,0,0,0.7));
             display: flex;
-            justify-content: center;
-            align-items:flex-end;
-            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
         }
         .s2{
             background-color: #a4508b;
-            background-image: radial-gradient(circle at center,#522434 0%,#4d2452 74%);
+            background-image: radial-gradient(circle at top,#522434 10%,#460464 60%,#240122 100%);
         }
     </style>
 </head>
