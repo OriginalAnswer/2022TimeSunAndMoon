@@ -102,14 +102,14 @@
             background-color: rgb(255, 255, 255);
             z-index: -1;
             border-radius: 50%;
-            animation: stars var(--time) linear infinite alternate;
+            animation: stars var(--time) ease-in-out infinite alternate;
             position: absolute;
         }
 
         @keyframes stars {
             0%{opacity: 0; transform: translate(0,0);}
             50%{opacity: 1; transform: translate(-400px,-300px);}
-            100%{opacity: .2; transform:translate(-800px,-600px);}
+            100%{opacity: 0; transform:translate(-800px,-600px);}
         }
         @media screen and (orientation: landscape) and (min-width:1100px) {
             #sun,#moon{
