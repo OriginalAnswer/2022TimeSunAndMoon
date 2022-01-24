@@ -39,6 +39,7 @@
                     rotate(-180deg)
                     rotate(0deg)
                     ;
+            transition: transform 20s linear;
         }
         .moonPoint{
             /* height: 10px;
@@ -50,10 +51,11 @@
             justify-content: center;
             align-items:flex-end;
             transform: 
-                    translateY(-50%) 
+            translateY(-50%) 
                     rotate(90deg) 
                     rotate(0deg)
                     ;
+            transition: transform 20s linear;
         }
         #sun{
             position: absolute;
@@ -83,7 +85,7 @@
         }
         #time{
             position: absolute;
-            font-size: 5em;
+            font-size: 8em;
             z-index: 100;
             color: #fff;
         }
@@ -149,6 +151,7 @@
             console.log(rot);
         }
         sunDeg();
+        setInterval(sunDeg, 1000);
     </script>
 </body>
 </html>
