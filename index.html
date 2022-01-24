@@ -8,7 +8,7 @@
     <style>
         ::-webkit-scrollbar {display: none;}
         *{margin: 0;padding: 0;box-sizing: border-box;
-        --time: 2s;}
+        --time: 10s;}
         body{
             width: 100%;
             height: 100vh;
@@ -134,37 +134,6 @@
                 <div id="moon"></div>
             </div>
             <h1 id="time"></h1>
-            
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
         </section>
         <section class="s2" id="s2"></section>
     </div>
@@ -183,7 +152,6 @@
         getTime();
         setInterval(getTime, 1000);
         // ++++++++++++++++++++++++++++++++++++++++++++++++
-        // (h*60+m) * 0.25
         let rot = 0;
         function sunDeg(){
             let date = new Date();
@@ -203,14 +171,23 @@
         sunDeg();
         setInterval(sunDeg, 1000);
         // ++++++++++++++++++++++++++++++++++++++++++++++++
-        const stars = document.getElementsByClassName('star');
+        function stars(){           
+            const count = 100;
+            const s1 = document.querySelector('#s1');
+            var i = 0;
 
-        stars.forEach(star => 
-        {
-            star.style.top = Math.floor(Math.random()*innerHeight);
-            star.style.left = Math.floor(Math.random()*innerWidth);
+            while(i<count){
+                const star = document.createElement('div');
+                const x = Math.floor(Math.random()*innerWidth/2);
+                const y = Math.floor(Math.random()*innerHeight);
+                star.style.top = x+'px';
+                star.style.left = y+'px';
+                star.classList.add('star');
+                s1.appendChild(star);
+                i++
+            }
         }
-        )
+        stars();
     </script>
 </body>
 </html>
