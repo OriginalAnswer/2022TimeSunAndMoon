@@ -96,20 +96,20 @@
             background-color: #a4508b;
             background-image: radial-gradient(circle at top,#522434 10%,#460464 60%,#240122 100%);
         }
-
         .star{
             width: 0.3em;
             height: 0.3em;
-            background-color: #fff;
+            background-color: rgb(255, 255, 255);
             z-index: -1;
             border-radius: 50%;
-            animation: stars var(--time) infinite;
+            animation: stars var(--time) linear infinite;
             position: absolute;
         }
 
         @keyframes stars {
-            0%{opacity: 100; transform: translate(0,0);}
-            100%{opacity: 0; transform: translate(-400px,-300px);}
+            0%{opacity: 0; transform: translate(0,0);}
+            80%{opacity: 100; transform: translate(-400px,-300px);}
+            100%{opacity: 0; transform:translate(-500px,-400px);}
         }
 
         @media screen and (orientation: portrait) and (max-width:930px) {
@@ -180,8 +180,8 @@
                 const star = document.createElement('div');
                 const x = Math.floor(Math.random()*innerWidth/2);
                 const y = Math.floor(Math.random()*innerHeight);
-                star.style.top = x+'px';
-                star.style.left = y+'px';
+                star.style.top = y+'px';
+                star.style.left = x*3+'px';
                 star.classList.add('star');
                 s1.appendChild(star);
                 i++
