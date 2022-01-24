@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun & Moon With Time</title>
+    <title>Realtime Sun & Moon set & rise</title>
     <style>
         ::-webkit-scrollbar {display: none;}
         *{margin: 0;padding: 0;box-sizing: border-box;
@@ -101,10 +101,10 @@
             width: 0.3em;
             height: 0.3em;
             background-color: #fff;
+            z-index: -1;
             border-radius: 50%;
             animation: stars var(--time) infinite;
             position: absolute;
-            z-index: -1;
         }
 
         @keyframes stars {
@@ -130,40 +130,41 @@
             <div class="sunPoint" id="sunPoint">
                 <div id="sun"></div>
             </div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
             <div class="moonPoint" id="moonPoint">
                 <div id="moon"></div>
             </div>
             <h1 id="time"></h1>
+            
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
         </section>
         <section class="s2" id="s2"></section>
     </div>
@@ -202,11 +203,14 @@
         sunDeg();
         setInterval(sunDeg, 1000);
         // ++++++++++++++++++++++++++++++++++++++++++++++++
-        const stars = document.querySelectorAll('.star');
-        stars.forEach(s => {
-            s.style.top = Math.floor(Math.random()*innerHeight/2);
-            s.style.left = Math.floor(Math.random()*innerWidth);
-        });
+        const stars = document.getElementsByClassName('star');
+
+        stars.forEach(star => 
+        {
+            star.style.top = Math.floor(Math.random()*innerHeight);
+            star.style.left = Math.floor(Math.random()*innerWidth);
+        }
+        )
     </script>
 </body>
 </html>
