@@ -37,7 +37,7 @@
             justify-content: center;
             align-items:flex-end;
             /* transform: translateY(-50%); */
-            transition: translate(rotate) 60s linear;
+            transition: translate 60s linear;
         }
         .moonPoint{
             /* height: 10px;
@@ -61,9 +61,9 @@
             box-shadow: 0 0 210px 100px rgb(253, 143, 54, 0.5), 
             0 0 210px 200px rgba(247, 162, 94, 0.53);
             transform: 
-                    translateY(-25vh) 
-                    /* translateX(50%) */
-                    ;
+            translateY(-25vh) 
+            /* translateX(50%) */
+            ;
         }
         #moon{
             position: absolute;
@@ -87,8 +87,8 @@
             line-height: 60%;
         }
         .s1{
-            background-color: rgba(255, 149, 207, 0.555);
-            /* background-color: rgba(149, 221, 255, 0.555); */
+            /* background-color: rgba(255, 149, 207, 0.555); */
+            background-color: rgba(149, 221, 255, 0.555);
             -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(0,0,0,0.7));
             display: flex;
             justify-content: flex-end;
@@ -99,10 +99,10 @@
         .s2{
             /* background-color: #a4508b; */
             /* background-image: radial-gradient(circle at top,#522434 10%,#460464 60%,#240122 100%); */
-            background-color: #507ba4;
-            background-image: radial-gradient(circle at top,#252452 10%,#120464 60%,#130124 100%);
-            /* background-color: #4a69a3;
-            background-image: radial-gradient(circle at top,#4a69a3 10%,#0538a8 60%,#042177 100%); */
+            /* background-color: #507ba4;
+            background-image: radial-gradient(circle at top,#252452 10%,#120464 60%,#130124 100%); */
+            background-color: #4a69a3;
+            background-image: radial-gradient(circle at top,#4a69a3 10%,#0538a8 60%,#042177 100%);
         }
         .star{
             width: 0.3em;
@@ -177,7 +177,9 @@
             } else {
                 rot = (h*60 + m) * 0.25;
                 document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
+                document.getElementById('sunPoint').style.transition = 'transform 10s ease-in-out';
                 document.getElementById('moonPoint').style.transform = `rotate(0deg) rotate(${rot}deg)`;
+                document.getElementById('moonPoint').style.transition = 'transform 10s ease-in-out';
             }
         }
         sunDeg();
