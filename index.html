@@ -36,7 +36,7 @@
             align-items:flex-end;
             transform: 
                     translateY(-50%) 
-                    rotate(-90deg)
+                    rotate(-180deg)
                     rotate(0deg)
                     ;
         }
@@ -130,18 +130,23 @@
         getTime();
         setInterval(getTime, 1000);
         // ++++++++++++++++++++++++++++++++++++++++++++++++
-        // const thismin = ;
-        let rot = -90;
-        function moveTheSun(){
+        // (h*60+m) * 0.25
+        let rot = 0;
+        function sunDeg(){
             let date = new Date();
             const h = date.getHours(); 
             const m = date.getMinutes();
-            if(h == 6 && m == 0){
+            
+            if(h === 0){
                 rot = rot;
-                document.getElementById('sunPoint').style.transform = `rotate(${rot}deg)`;
+                document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
+            } else {
+                rot = (h*60 + m) * 0.25;
+                document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
             }
             console.log(rot);
         }
+        sunDeg();
     </script>
 </body>
 </html>
