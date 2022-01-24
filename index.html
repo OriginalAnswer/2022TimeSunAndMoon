@@ -95,6 +95,7 @@
             align-items: center;
             flex-direction: column;
             position: relative;
+            background: linear-gradient(0deg, rgba(212,58,23,.8) 0%, rgba(212,58,23,.8) 1%, rgba(226,116,13,10) 3%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%);
         }
         .s2{
             /* background-color: #a4508b; */
@@ -103,10 +104,12 @@
             background-image: radial-gradient(circle at top,#252452 10%,#120464 60%,#130124 100%); */
             background-color: #4a69a3;
             background-image: radial-gradient(circle at top,#4a69a3 10%,#0538a8 60%,#042177 100%);
+            /* background: radial-gradient(circle at top   , rgba(195,34,34,.8) 0%, rgba(212,58,23,.8) 1%, rgba(226,116,13,10) 3%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%); */
+
         }
         .star{
-            width: 0.3em;
-            height: 0.3em;
+            width: 0.2em;
+            height: 0.2em;
             background-color: rgb(255, 255, 255);
             z-index: -1;
             border-radius: 50%;
@@ -193,9 +196,9 @@
             while(i<count){
                 const star = document.createElement('div');
                 const x = Math.floor(Math.random()*innerWidth/2);
-                const y = Math.floor(Math.random()*innerHeight);
+                const y = Math.floor(Math.random()*innerHeight/2);
                 star.style.top = `${y}%`;
-                star.style.left = x*3+'px';
+                star.style.left = x*2+'px';
                 star.classList.add('star');
                 s1.appendChild(star);
                 i++
