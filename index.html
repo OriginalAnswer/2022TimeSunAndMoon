@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Outfit&family=Sedgwick+Ave&display=swap" rel="stylesheet">
     <title>Realtime Sun & Moon set & rise</title>
     <style>
         ::-webkit-scrollbar {display: none;}
@@ -57,14 +58,14 @@
             border-radius: 50%;
             background-color: #a40606;
             background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
-            box-shadow: 0 0 210px 100px rgb(253, 143, 54, 0.6), 
-            0 0 210px 200px rgba(247, 162, 94, 0.753);
+            box-shadow: 0 0 210px 100px rgb(253, 143, 54, 0.5), 
+            0 0 210px 200px rgba(247, 162, 94, 0.53);
             transform: 
                     translateY(-25vh) 
                     /* translateX(50%) */
                     ;
         }
-            #moon{
+        #moon{
             position: absolute;
             transform: 
                     translateY(-25vh) 
@@ -82,6 +83,8 @@
             font-size: 8em;
             z-index: 100;
             color: #fff;
+            font-family: 'Sedgwick Ave', sans-serif;
+            line-height: 65%;
         }
         .s1{
             background-color: rgba(255, 149, 207, 0.555);
@@ -108,18 +111,22 @@
 
         @keyframes stars {
             0%{opacity: 0; transform: translate(0,0);}
-            80%{opacity: 100; transform: translate(-400px,-300px);}
-            100%{opacity: 0; transform:translate(-500px,-400px);}
+            50%{opacity: 100; transform: translate(-400px,-300px);}
+            100%{opacity: 0; transform:translate(-800px,-600px);}
         }
 
         @media screen and (orientation: portrait) and (max-width:930px) {
+            #sun,#moon{
+                width: 25vw;
+                height: 25vw;
+            }
             #time{
                 font-size: 6.5em;
             }
         }
         @media screen and (orientation: portrait) and (max-width:830px) {
             #time{
-                font-size: 4em;
+                font-size: 6em;
             }
         }
     </style>
