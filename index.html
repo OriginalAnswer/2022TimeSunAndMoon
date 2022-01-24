@@ -188,8 +188,8 @@
             
             if(h === 0){
                 rot = rot;
-                document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
-                document.getElementById('moonPoint').style.transform = `rotate(90deg) rotate(${rot}deg)`;
+                // document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
+                // document.getElementById('moonPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
             } else {
                 rot = (h*60 + m) * 0.25;
                 document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
