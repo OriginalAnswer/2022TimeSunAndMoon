@@ -26,11 +26,11 @@
         }
         .sunPoint{
             /* overflow: hidden; */
-            position: absolute;
             /* height: 10px;
             width: 100px; */
-            top: 50vh;
             /* background-color: rgba(0,0,0,0.8); */
+            top: 50vh;
+            position: absolute;
             display: flex;
             justify-content: center;
             align-items:flex-end;
@@ -41,17 +41,18 @@
                     ;
         }
         .moonPoint{
-            position: fixed;
             /* height: 10px;
             width: 100px; */
-            top: 50vh;
             /* background-color: rgba(0,0,0,0.8); */
+            top: 50vh;
+            position: absolute;
             display: flex;
             justify-content: center;
             align-items:flex-end;
             transform: 
                     translateY(-50%) 
-                    rotate(180deg) rotate(-90deg)
+                    rotate(90deg) 
+                    rotate(0deg)
                     ;
         }
         #sun{
@@ -71,14 +72,14 @@
             position: absolute;
             transform: 
                     translateY(-25vh) 
-                    translateX(50%)
                     ;
             width: 15vw;
             height: 15vw;
             border-radius: 50%;
             background-color: #a49906;
             background-image: linear-gradient(315deg, #a49906 0%, #f0a95d 74%);
-            box-shadow: 0 0 210px 100px rgba(253, 250, 54, 0.6), 0 0 210px 200px rgba(247, 232, 94, 0.753);
+            box-shadow: 0 0 0px 0px rgba(253, 250, 54, 0.6)
+            , 0 0 110px 100px rgba(247, 232, 94, 0.753);
         }
         #time{
             position: absolute;
@@ -93,7 +94,6 @@
             justify-content: flex-end;
             align-items: center;
             flex-direction: column;
-            overflow: hidden;
             position: relative;
         }
         .s2{
@@ -108,9 +108,9 @@
             <div class="sunPoint" id="sunPoint">
                 <div id="sun"></div>
             </div>
-            <!-- <div class="moonPoint">
+            <div class="moonPoint" id="moonPoint">
                 <div id="moon"></div>
-            </div> -->
+            </div>
             <h1 id="time"></h1>
         </section>
         <section class="s2" id="s2"></section>
@@ -125,7 +125,7 @@
             const h = String(date.getHours()).padStart(2,"0");
             const m = String(date.getMinutes()).padStart(2,"0");
             const s = String(date.getSeconds()).padStart(2,"0");
-            time.innerText = `${h}:${m}`;
+            time.innerText = `${h}:${m}:${s}`;
         }
         getTime();
         setInterval(getTime, 1000);
@@ -140,9 +140,11 @@
             if(h === 0){
                 rot = rot;
                 document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
+                document.getElementById('moonPoint').style.transform = `rotate(90deg) rotate(${rot}deg)`;
             } else {
                 rot = (h*60 + m) * 0.25;
                 document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
+                document.getElementById('moonPoint').style.transform = `rotate(0deg) rotate(${rot}deg)`;
             }
             console.log(rot);
         }
