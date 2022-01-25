@@ -50,8 +50,8 @@
             border-radius: 50%;
             background-color: #a40606;
             background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
-            box-shadow: 0 0 210px 100px rgb(253, 143, 54, 0.5), 
-            0 0 210px 200px rgba(247, 162, 94, 0.53);
+            box-shadow: 0 0 210px 100px rgb(253, 143, 54, 0.8), 
+            0 0 910px 300px rgba(247, 162, 94, 0.2);
             transform: 
             translateY(-25vh);
         }
@@ -84,7 +84,10 @@
             flex-direction: column;
             position: relative;
             /* background: linear-gradient(0deg, rgba(212,58,23,.8) 0%, rgba(212,58,23,.8) 1%, rgba(226,116,13,10) 3%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%); */
-            background: linear-gradient(0deg, rgb(23, 35, 212,1) 0%, rgba(23, 35, 212,1) 5%, rgb(13, 52, 226) 20%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%);
+            /* background: linear-gradient(0deg, rgb(23, 35, 212,1) 0%, rgba(23, 35, 212,1) 5%, rgb(13, 52, 226) 20%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%); */
+            /* background:linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
+            /* background:linear-gradient(180deg, #1c2d4f 0%, #2e4d78 25%, #58bcd0 75%,#dbcdb0 90%,#e1b28a 95%,#bb7d63 100%,#b26549 100%); */
+            /* background:linear-gradient(180deg, #474a75 0%, #705675 10%,#f96736 70%,#fb5632 80%,#e92620 100%); */
         }
         .s2{
             /* background-color: #a4508b; */
@@ -94,7 +97,7 @@
             background-color: #4a69a3;
             background-image: radial-gradient(circle at top,#4a69a3 10%,#0538a8 60%,#042177 100%);
             /* background: radial-gradient(circle at top   , rgba(195,34,34,.8) 0%, rgba(212,58,23,.8) 1%, rgba(226,116,13,10) 3%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%); */
-
+            
         }
         .star{
             width: 0.2em;
@@ -105,7 +108,7 @@
             animation: stars var(--time) ease-in-out infinite alternate;
             position: absolute;
         }
-
+        
         @keyframes stars {
             0%{opacity: 0; transform: translate(0,0);}
             50%{opacity: 1; transform: translate(-400px,-300px);}
@@ -116,6 +119,13 @@
                 width: 10vw;
                 height: 10vw;
                 transform: translateY(-50vh);
+            }
+        }
+        @media screen and (orientation: landscape) and (min-width:1100px) and (min-height:700px) {
+            #sun,#moon{
+                width: 8vw;
+                height: 8vw;
+                transform: translateY(-40vh);
             }
         }
         
@@ -150,6 +160,38 @@
                 font-size: 2.5em;
             }
         }
+        /* 
+        
+        아침 6시까지 >>>> linear-gradient(0deg, rgb(23, 35, 212,1) 0%, rgba(23, 35, 212,1) 5%, rgb(13, 52, 226) 20%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%)
+        아침 6시부터 >>>> linear-gradient(180deg, #2a1949 0%, #612c64 35%, #a24381 65%,#db6595 75%,#ef657b 85%,#f66876 90%,#fc8163 100%)
+        아침 7시부터 >>>> linear-gradient(180deg, #1c2d4f 0%, #2e4d78 25%, #58bcd0 75%,#dbcdb0 90%,#e1b28a 95%,#bb7d63 100%,#b26549 100%)
+        오전 >>>> linear-gradient(180deg, #58bcd0 0%,#dbcdb0 100%)
+        낮 >>>>linear-gradient(180deg, #b7c4de 0%, #58bcd0 100%)
+        5시부터 >>>> linear-gradient(180deg, #1c2d4f 0%, #2e4d78 25%, #58bcd0 75%,#dbcdb0 90%,#e1b28a 95%,#bb7d63 100%,#b26549 100%)
+        5 30 부터 >>>>linear-gradient(180deg, #474a75 0%, #705675 10%,#f96736 70%,#fb5632 80%,#e92620 100%)
+        
+        */
+        @keyframes change6 {
+            
+        }
+        @keyframes change7 {
+            
+        }
+        @keyframes change9 {
+            
+        }
+        @keyframes change12 {
+            
+        }
+        @keyframes change5 {
+            
+        }
+        @keyframes change530 {
+            
+        }
+        @keyframes change6 {
+            
+        }
         </style>
 </head>
 <body>
@@ -169,6 +211,7 @@
 
     <!--  -->
     <script type="text/javascript">
+        // ++++++++++++++++++++++++++++++++++++++++++++++++
         const time = document.querySelector('h1#time');
         function getTime(){
             const date = new Date();
@@ -177,8 +220,6 @@
             const s = String(date.getSeconds()).padStart(2,"0");
             time.innerText = `${h}:${m}`;
         }
-        getTime();
-        setInterval(getTime, 1000);
         // ++++++++++++++++++++++++++++++++++++++++++++++++
         let rot = 0;
         function sunDeg(){
@@ -198,26 +239,56 @@
                 document.getElementById('moonPoint').style.transition = 'transform 10s ease-in-out';
             }
         }
-        sunDeg();
-        setInterval(sunDeg, 1000);
+        // ++++++++++++++++++++++++++++++++++++++++++++++++
+        function skycolorset(){
+            let date = new Date();
+            const h = date.getHours(); 
+            const m = date.getMinutes();
+            if (h<6) {
+                document.getElementById('s1').style.background = 'linear-gradient(0deg, rgb(23, 35, 212,1) 0%, rgba(23, 35, 212,1) 5%, rgb(13, 52, 226) 20%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%)';
+            } else if(h<7){
+                document.getElementById('s1').style.background = 'linear-gradient(180deg, #2a1949 0%, #612c64 35%, #a24381 65%,#db6595 75%,#ef657b 85%,#f66876 90%,#fc8163 100%)';
+            } else if (h<9) {
+                document.getElementById('s1').style.background = 'linear-gradient(180deg, #1c2d4f 0%, #2e4d78 25%, #58bcd0 75%,#dbcdb0 90%,#e1b28a 95%,#bb7d63 100%,#b26549 100%)';
+            } else if (h<12) {
+                document.getElementById('s1').style.background = 'linear-gradient(180deg, #58bcd0 0%,#dbcdb0 100%)';
+            } else if (h<17) {
+                document.getElementById('s1').style.background = 'linear-gradient(180deg, #b7c4de 0%, #58bcd0 100%)';
+            } else if (h<18 && m < 30) {
+                document.getElementById('s1').style.background = 'linear-gradient(180deg, #1c2d4f 0%, #2e4d78 25%, #58bcd0 75%,#dbcdb0 90%,#e1b28a 95%,#bb7d63 100%,#b26549 100%)';                         
+            } else if (h<19) {
+                document.getElementById('s1').style.background = 'inear-gradient(180deg, #474a75 0%, #705675 10%,#f96736 70%,#fb5632 80%,#e92620 100%)';
+            } else if (h<24) {
+                document.getElementById('s1').style.background = 'linear-gradient(0deg, rgb(23, 35, 212,1) 0%, rgba(23, 35, 212,1) 5%, rgb(13, 52, 226) 20%, rgba(43,92,134,1) 48%, rgba(15,24,124,1) 79%, rgba(1,17,63,1) 100%, rgba(2,12,56,1) 100%)';
+            }
+        }
         // ++++++++++++++++++++++++++++++++++++++++++++++++
         function stars(){           
             const count = 500;
-            const s1 = document.querySelector('#s1');
             var i = 0;
-
-            while(i<count){
-                const star = document.createElement('div');
-                const x = Math.floor(Math.random()*innerWidth);
-                const y = Math.floor(Math.random()*innerHeight/2);
-                star.style.top = `${y}%`;
-                star.style.left = `${x*3}px`;
-                star.classList.add('star');
-                s1.appendChild(star);
-                i++
+            let date = new Date();
+            const h = date.getHours(); 
+            const m = date.getMinutes();
+            if (h<6 || h>17) {
+                while(i<count){
+                    const star = document.createElement('div');
+                    const x = Math.floor(Math.random()*innerWidth);
+                    const y = Math.floor(Math.random()*innerHeight/2);
+                    star.style.top = `${y}%`;
+                    star.style.left = `${x*3}px`;
+                    star.classList.add('star');
+                    s1.appendChild(star);
+                    i++
+                }
             }
         }
+        getTime();
+        setInterval(getTime, 1000);
+        sunDeg();
+        setInterval(sunDeg, 1000);
+        skycolorset();
+        setInterval(skycolorset, 1000);
         stars();
-    </script>
+        </script>
 </body>
 </html>
