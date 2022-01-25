@@ -187,9 +187,9 @@
             const m = date.getMinutes();
             rot = (h*60 + m) * 0.25;
             document.getElementById('sunPoint').style.transform = `rotate(-180deg) rotate(${rot}deg)`;
-            document.getElementById('sunPoint').style.transition = 'transform 10s ease-in';
-            document.getElementById('moonPoint').style.transform = `rotate(0deg) rotate(${rot}deg)`;
-            document.getElementById('moonPoint').style.transition = 'transform 10s ease-in';
+            document.getElementById('sunPoint').style.transition = 'transform 10s ease-in-out';
+            document.getElementById('moonPoint').style.transform = `rotate(-0deg) rotate(${rot}deg)`;
+            document.getElementById('moonPoint').style.transition = 'transform 10s ease-in-out';
         }
         // ++++++++++++++++++++++++++++++++++++++++++++++++
         function skycolorset(){
